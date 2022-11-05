@@ -9,10 +9,13 @@ generator client {
 
 
 model User {
-  id        String @id @default(uuid())
-  email     String @unique
-  name      String
-  type      String
+  id              String @id @default(uuid())
+  email           String @unique
+  name            String
+  type            String
+  phone           String
+  interest_area   String
+  admin           Boolean
 
   @@map("users")
   documents Documents[]
@@ -32,10 +35,12 @@ model Documents {
   user_id     String
 }
 
-model College {
+model Colleges {
   id          String @id @default(uuid())
   name        String
   description String
   url         String
   logo_url    String
+
+  @@map("colleges")
 }

@@ -4,8 +4,6 @@ class CreateDocumentService {
 
   async execute(title: string, description: string, text: string, author_name: string, user_id: string) {
 
-    console.log({ title, description, text, author_name, user_id })
-
     const documents = await prismaClient.documents.create({
       data: {
         title,
