@@ -1,0 +1,41 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model User {
+  id        String @id @default(uuid())
+  email     String @unique
+  name      String
+  type      String
+
+  @@map("users")
+  documents Documents[]
+}
+
+model Documents {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  text        String
+  created_at  DateTime @default(now())
+  author_name String 
+
+  user User @relation(fields: [user_id], references: [id])
+
+  @@map("documents")
+  user_id     String
+}
+
+model College {
+  id          String @id @default(uuid())
+  name        String
+  description String
+  url         String
+  logo_url    String
+}
