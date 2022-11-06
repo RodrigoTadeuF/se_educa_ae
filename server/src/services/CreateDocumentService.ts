@@ -2,25 +2,21 @@ import prismaClient from "../prisma";
 
 class CreateDocumentService {
 
-  async execute(title: string, description: string, text: string, author_name: string, user_id: string) {
-
+  async execute(title: string, content: string, description: string, user_id: string, author_name: string) {
     const documents = await prismaClient.documents.create({
       data: {
         title,
+        content,
         description,
-        text,
-        author_name,
-        user_id,     
+        user_id,
+        author_name
       },
       include: {
         user: true
       }
     });
 
-    
-
     return documents;
-
   }
 }
 

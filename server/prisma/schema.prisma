@@ -25,7 +25,7 @@ model Documents {
   id          String @id @default(uuid())
   title       String
   description String
-  text        String
+  content     String
   created_at  DateTime @default(now())
   author_name String 
 

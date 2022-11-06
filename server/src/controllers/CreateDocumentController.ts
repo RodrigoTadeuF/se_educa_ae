@@ -6,11 +6,13 @@ class CreateDocumentController {
 
     async handle(request: Request, response: Response) {
 
-      const { title, text, user_id, author_name, description } = request.body;
+      const { title, content, user_id, description, author_name } = request.body;
 
       const service = new CreateDocumentService();
 
-      const result = await service.execute(title, text, user_id, author_name, description);
+      console.log("AAAAAAaasdAAA", title, content, user_id, description, author_name)
+
+      const result = await service.execute(title, content, description, user_id, author_name);
 
       return response.json(result);
     }
