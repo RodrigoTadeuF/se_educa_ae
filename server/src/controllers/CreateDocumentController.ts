@@ -10,8 +10,6 @@ class CreateDocumentController {
 
       const service = new CreateDocumentService();
 
-      console.log("AAAAAAaasdAAA", title, content, user_id, description, author_name)
-
       const result = await service.execute(title, content, description, user_id, author_name);
 
       return response.json(result);
