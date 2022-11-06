@@ -4,8 +4,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        base: '#E5E5E5'
-      }
+        base: '#E5E5E5',
+        aqua: '#99F6E4'
+      },
+      fontFamily: {
+        sans: 'Inter, sans-serif'
+      },
+      
     },
   },
   plugins: [],
