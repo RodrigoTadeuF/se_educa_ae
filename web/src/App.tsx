@@ -4,7 +4,7 @@ import './styles/global.css'
 
 function App() {
   return (
-    <div className="bg-slate-700">
+    <div className="">
 
       <h1 className='text-9xl'>Hello World</h1>
     </div>
