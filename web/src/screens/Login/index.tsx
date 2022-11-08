@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export function Login() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center pt-32">
       <header className="flex flex-col text-center">
         <h1 className="text-[32px] font-sans font-bold mb-3">Se Educaê</h1>
         <p className="font-sans text-base font-light">Faça login na nossa plataforma e construa conosco sua carreira</p>
@@ -34,11 +36,10 @@ export function Login() {
           </div>
 
           <div className="flex flex-col items-center">
-            <button 
-              className="w-[400px] h-10 rounded bg-aqua font-extralight"
-              type="submit">
-              Fazer login
-            </button>
+            <Link to="/college-list"
+              className="w-[400px] h-10 rounded bg-aqua font-extralight">
+              <span className="flex py-2 justify-center">Fazer login</span>
+            </Link>
 
             <span className="text-[14px] font-sans font-extralight mt-4 underline">Esqueceu a senha?</span>
           </div>
@@ -46,7 +47,6 @@ export function Login() {
         </form>
 
       </div>
-
     </div>
   )
 }

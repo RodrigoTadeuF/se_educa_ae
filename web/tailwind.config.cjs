@@ -4,8 +4,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        base: '#E5E5E5',
-        aqua: '#99F6E4'
+        base: '#F4F4F5',
+        aqua: '#99F6E4',
+        darkBase: '#E4E4E7',
+        cleanGreen: '#6EE7B7'
       },
       fontFamily: {
         sans: 'Inter, sans-serif'
