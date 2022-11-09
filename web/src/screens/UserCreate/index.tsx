@@ -13,7 +13,7 @@ export function UserCreate() {
     type: '',
     phone: '',
     interest_area: '',
-    admin: ''
+    admin: false
   })
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
@@ -25,7 +25,12 @@ export function UserCreate() {
   async function handleCreateCollege(event:FormEvent) {
     event.preventDefault();
 
-    const { email, name, type, phone, interest_area, admin } = formData;
+    const { email, name, type, phone, interest_area } = formData;
+    let admin = false;
+
+    if(type === 'Admin') {
+      admin = true
+    }
 
     const data = {
       email,
@@ -40,7 +45,7 @@ export function UserCreate() {
 
     alert('Novo Usuário criado!');
 
-    navigate('/user-list');
+    navigate('/home'); 
   }
 
   return (
@@ -75,17 +80,55 @@ export function UserCreate() {
             type="text"
             onChange={handleInputChange} />
 
-          {/* <label className="font-semibold font-sans" htmlFor="type">Tipo de usuário: </label>
-          <input 
-            className="w-[900px] h-10 rounded my-4"
-            id="type" 
-            name="type" 
-            type="text"
-            onChange={handleInputChange} /> 
+          <div className="flex justify-between my-4">
+
+            <p className="font-semibold font-sans">Tipo de usuário: </p>
+
+            <div className="flex justify-center">
+              <label htmlFor="type">Estudante</label>
+              <input
+              className="ml-8"
+              type="radio"
+              id="type"
+              name="type"
+              value="Student"
+              onChange={handleInputChange} />
+            </div>
             
-            FAZER COMO RADIO*/}
+            <div className="flex justify-center">
+              <label htmlFor="type">Psicólogo</label>
+              <input 
+              className="ml-8"
+              type="radio"
+              id="type"
+              name="type"
+              value="Psychologist"
+              onChange={handleInputChange} /> 
+            </div>
 
+            <div className="flex justify-center">
+              <label htmlFor="type">Pedagogo</label>
+              <input 
+              className="ml-8"
+              type="radio"
+              id="type"
+              name="type"
+              value="Pedagogue"
+              onChange={handleInputChange} /> 
+            </div>
 
+            <div className="flex justify-center">
+              <label htmlFor="type">Admin</label>
+              <input 
+              className="ml-8 mr-4"
+              type="radio"
+              id="type"
+              name="type"
+              value="Admin"
+              onChange={handleInputChange} /> 
+            </div>
+          </div>
+          
           <button 
             className="flex justify-center items-center font-sans text-base cursor-pointer bg-aqua w-32 h-10 rounded my-4" 
             type="submit">

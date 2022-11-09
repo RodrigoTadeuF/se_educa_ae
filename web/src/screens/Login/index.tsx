@@ -36,7 +36,7 @@ export function Login() {
           </div>
 
           <div className="flex flex-col items-center">
-            <Link to="/college-list"
+            <Link to="/home"
               className="w-[400px] h-10 rounded bg-aqua font-extralight">
               <span className="flex py-2 justify-center">Fazer login</span>
             </Link>

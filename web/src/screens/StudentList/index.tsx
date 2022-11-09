@@ -9,11 +9,11 @@ interface UserList {
   phone: string
 }
 
-export function UserList() {
+export function StudentList() {
   const [users, setUsers] = useState<UserList[]>([])
 
   useEffect(() => {
-    api.get<UserList[]>('/users').then(response => {
+    api.get<UserList[]>('/students').then(response => {
       setUsers(response.data)
     });
   }, [])
@@ -21,7 +21,7 @@ export function UserList() {
   return (
       <>
         <h2 className="font-sans font-semibold text-2xl ml-[270px] my-6">
-          Usuários
+          Estudantes
         </h2>
         {users.map(user => {
           return (
